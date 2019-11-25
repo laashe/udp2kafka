@@ -26,7 +26,7 @@ RUN groupadd -r $GRP && \
 
 USER $USR
 WORKDIR /home/$USR
-COPY --chown=$USR:$GRP ./start.sh /home/$USR/start.sh
+COPY --chown=${USR}:${GRP} ./start.sh start.sh
 
 RUN chmod 744 ~/start.sh && \
     mkdir -p ~/bin/jars && \
